@@ -2,6 +2,7 @@
   "expo": {
     "name": "reminderApp",
     "slug": "reminderApp",
+    "sdk-version": "47.0.8",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +29,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "08db5d03-bee1-4d49-9120-1d6cc2714a77"
+      }
     }
   }
 }

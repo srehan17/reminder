@@ -30,7 +30,7 @@ const HomeScreen = ({navigation, route}) => {
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        paddingTop:100
     },
     btn: {
         backgroundColor: 'orange',
