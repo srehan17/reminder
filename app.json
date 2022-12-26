@@ -2,7 +2,6 @@
   "expo": {
     "name": "reminderApp",
     "slug": "reminderApp",
-    "sdk-version": "47.0.8",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
