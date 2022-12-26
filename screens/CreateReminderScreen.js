@@ -32,7 +32,7 @@ const CreateReminderScreen = ({navigation, route}) => {
     return (
       <TouchableWithoutFeedback onPress={() => {
         Keyboard.dismiss();
-        console.groupCollapsed('dismissed keyboard');
+        // console.groupCollapsed('dismissed keyboard');
       }}>
 
       <View style={styles.container}>
