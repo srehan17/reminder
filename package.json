@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^0.17.0",
+    "@react-native-community/checkbox": "^0.5.14",
     "@react-native-community/datetimepicker": "6.5.2",
     "@react-navigation/native": "^6.1.1",
     "@react-navigation/native-stack": "^6.9.7",
@@ -26,7 +27,8 @@
     "react-native-screens": "~3.18.0",
     "react-native-uuid": "^2.0.1",
     "react-native-vector-icons": "^9.2.0",
-    "react-native-web": "~0.18.9"
+    "react-native-web": "~0.18.9",
+    "expo-checkbox": "~2.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",

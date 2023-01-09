@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { StyleSheet, View, FlatList, TouchableOpacity, Text, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import ListItem from '../components/ListItem';
 import AddItem from '../components/AddItem';
 import uuid from 'react-native-uuid';
+import { RemindersContext } from '../App';
 
 const CreateReminderScreen = ({navigation, route}) => {
-    const [items, setItems] = useState([])
+    const {reminders, setReminders } = useContext(RemindersContext);
+    // const [items, setItems] = useState([])
 
     const addItem = (item) => {
       if (!item.text) {
@@ -13,18 +15,17 @@ const CreateReminderScreen = ({navigation, route}) => {
       }
       else {
         try {
-          setItems(prevItems => {
-            return [{id: uuid.v4(), text:item.text, date:item.date}, ...prevItems];
-          })
+          setReminders([{id: uuid.v4(), text:item.text, date:item.date}, ...reminders]);
         }
-        catch {
+        catch(err) {
+          console.log(err)
           alert("oops something went wrong")
         }
       }
     }
   
     const deleteItem = id => {
-      setItems(prevItems => {
+      setReminders(prevItems => {
         return prevItems.filter(item => item.id != id)
       });
     }
@@ -32,7 +33,6 @@ const CreateReminderScreen = ({navigation, route}) => {
     return (
       <TouchableWithoutFeedback onPress={() => {
         Keyboard.dismiss();
-        // console.groupCollapsed('dismissed keyboard');
       }}>
 
       <View style={styles.container}>
@@ -40,9 +40,9 @@ const CreateReminderScreen = ({navigation, route}) => {
           <AddItem 
             addItem={addItem} />
         </View>
-        <View style={styles.flatlist}>
+        {/* <View style={styles.flatlist}>
           <FlatList 
-            data={items} 
+            data={reminders} 
             renderItem={({item}) => (
               <ListItem 
                 item={item} 
@@ -50,11 +50,11 @@ const CreateReminderScreen = ({navigation, route}) => {
               />
             )}
           />
-        </View>
+        </View> */}
         <View style={styles.allReminders}>
           <TouchableOpacity style={styles.btnAllReminders} 
               onPress={() => {
-                navigation.navigate('ListOfRemindersScreen', {title:'View all Reminders', data: items});
+                navigation.navigate('ListOfRemindersScreen', {title:'View all Reminders'});
               }
                 } >
                 <Text styles={styles.btnTextAllReminders}>

@@ -9,7 +9,7 @@ const ListItem = (props) => {
       <View style={styles.listItemView}>
         <View style={styles.row}>
           <Text style={styles.listItemText}>{props.item.text} </Text>
-          <Text style={styles.listItemText}>{props.item.date.substring(0,21)}</Text>
+          <Text style={styles.listItemText}>{props.item.date.substring(4,21)}</Text>
         </View>
           {/* <FontAwesome name="remove" size={24} color="orange" 
             // onPress={() => props.deleteItem(props.item.id)} 

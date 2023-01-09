@@ -6,7 +6,8 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 const AddItem = (props) => {
     const [item, setItem] = useState({
         text: "",
-        date: new Date().toString()
+        date: new Date().toString(),
+        completed: false  
     })
     const [showContent, setShowContent] = useState(false);
 
@@ -34,7 +35,8 @@ const AddItem = (props) => {
         }
         setItem({
             text: '',                               
-            date: new Date().toString()
+            date: new Date().toString(),
+            completed: false
         });
         setTimeout(() => {
             setShowContent(false);
